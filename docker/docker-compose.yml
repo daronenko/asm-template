@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  asm-template-container:
+    platform: linux/amd64
+    build: .
+    privileged: true
+    volumes:
+      - ..:/asm-template:rw
+    working_dir: /asm-template
+    entrypoint:
+      - docker/tools/run_as_user.sh
